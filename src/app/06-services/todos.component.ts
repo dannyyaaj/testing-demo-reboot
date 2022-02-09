@@ -3,7 +3,7 @@ import { TodoService } from './todo.service'
 
 export class TodosComponent {
   todos: any = [];
-  message: string;
+  message: string = '';
 
   constructor(private service: TodoService) { }
 
@@ -18,7 +18,7 @@ export class TodosComponent {
       err => this.message = err);
   }
 
-  delete(id) {
+  delete(id: number) {
     if (confirm('Are you sure?'))
       this.service.delete(id).subscribe();
   }

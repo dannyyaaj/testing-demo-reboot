@@ -6,7 +6,7 @@ export class TodoService {
   constructor(private http: HttpClient) {
   }
 
-  add(todo) {
+  add(todo: any) {
     return this.http.post('...', todo).pipe(map(r => r));
   }
 
@@ -14,7 +14,7 @@ export class TodoService {
     return this.http.get('...').pipe(map(r => r));
   }
 
-  delete(id) {
+  delete(id: number) {
     return this.http.delete('...').pipe(map(r => r));
   }
 }
